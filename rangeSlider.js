@@ -22,9 +22,9 @@ function rangeSliderColors(e) {
 
 function updateSliderOnTouch(event) {
   // const touch = event.touches[0];
-  const touch = event.touches[0].clientX;
+  const touch = event.touches[0];
 
-  touchValue.textContent = touch.value;
+  touchValue.textContent = touch.clientX;
 
   const sliderRect = lengthSlider.getBoundingClientRect();
   const newValue = Math.round(
