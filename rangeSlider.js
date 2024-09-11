@@ -8,7 +8,11 @@ const sliderEmpty = rootStyles.getPropertyValue('--clr-2').trim();
 function rangeSliderColors(e) {
   let a = e.value;
   rangeValue.textContent = a;
-  e.style.background = `linear-gradient(to right,${sliderProgress},${sliderProgress} ${
-    a * passwordMax
-  }%,${sliderEmpty} ${a * passwordMax}%)`;
+  e.style.background = ''; // Reset first
+  setTimeout(() => {
+    e.style.background = `linear-gradient(to right, ${sliderProgress}, ${sliderProgress} ${
+      a * passwordMax
+    }%, ${sliderEmpty} ${a * passwordMax}%)`;
+  }, 0); // Reapply background
+  // e.style.background = `linear-gradient(to right,#4BD663,#4BD663 ${a * passwordMax}%,#eee ${a * passwordMax}%)`;
 }
